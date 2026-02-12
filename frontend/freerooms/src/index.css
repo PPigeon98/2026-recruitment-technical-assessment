@@ -1,0 +1,244 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1224px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    aspect-ratio: 15 / 3;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 0.5rem;
+  }
+
+  .card button,
+  .card .rooms {
+    z-index: 1;
+  }
+
+  .card img {
+    filter: brightness(0.6);
+  }
+
+  .card .rooms .count2 {
+    display: none;
+  }
+
+  .card .rooms .count3 {
+    margin-left: -0.5rem;
+  }
+
+  .card button {
+    max-width: 60%;
+    background-color: transparent;
+  }
+
+  .bar2 {
+    flex-wrap: wrap;
+  }
+
+  .bar2 .search {
+    flex: 0 0 calc(100% - 1rem);
+    order: -1;
+  }
+
+  .bar2 .filter,
+  .bar2 .sort {
+    order: 1;
+  }
+
+  .bar1 .title {
+    display: none;
+  }
+}
+
+.card {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.card button {
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-align: left;
+  padding: 1rem;
+}
+
+.card .rooms {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  color: black;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 541px) and (max-width: 1224px) {
+  .card {
+    aspect-ratio: 15 / 10;
+  }
+}
+
+@media (min-width: 1225px) {
+  .card {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (min-width: 541px) {
+  .card button {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    width: calc(100% - 1rem);
+    background-color: #ed722c;
+  }
+
+  .card .rooms {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+.card .rooms .dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: green;
+  border-radius: 50%;
+}
+
+@media (min-width: 541px) {
+  .card .rooms .count3 {
+    display: none;
+  }
+
+  .card button {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    width: calc(100% - 1rem);
+  }
+
+  .card .rooms {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+.bar1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #ed722c;
+  font-size: 1.5rem;
+  height: 2.5rem;
+  font-weight: bold;
+}
+
+.logo {
+  width: 3rem;
+  height: 3rem;
+}
+
+.bar1 .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.bar1 .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #ed722c;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.bar1 .active {
+  background-color: #ed722c;
+  color: white;
+}
+
+.bar1 h1 {
+  border: 1px solid #ed722c;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.bar2 {
+  color: #ed722c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bar2 .filter,
+.bar2 .sort {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  border: 2px solid #ed722c;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.bar2 .search {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  border: 1px solid grey;
+  color: gray;
+  width: 50%;
+}
+
+.bar2 .search input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
